@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../dist/js/component-chart.js"></script>
+<style>
+    #c1, #c2, #c3, #c4, #c5, #c6, #c7, #c8{
+        border: 1px solid #ccc;
+        margin-top: 6px;
+        width: 33%;
+        height: 330px;
+    }
+
+</style>
+
+<body>
+    <div id="c1"></div>
+    <div id="c2"></div>
+    <div id="c3"></div>
+    <div id="c4"></div>
+    <div id="c5"></div>
+    <div id="c6"></div>
+    <div id="c7"></div>
+    <div id="c8"></div>
+</body>
+<script>
+    const data = [
+        { name:'London', 'Jan.': 18.9, 'Feb.': 28.8, 'Mar.' :39.3, 'Apr.': 81.4, 'May.': 47, 'Jun.': 20.3, 'Jul.': 24, 'Aug.': 35.6 },
+        { name:'Berlin', 'Jan.': 12.4, 'Feb.': 23.2, 'Mar.' :34.5, 'Apr.': 99.7, 'May.': 52.6, 'Jun.': 35.5, 'Jul.': 37.4, 'Aug.': 42.4}
+    ]; // G2 对数据源格式的要求，仅仅是 JSON 数组，数组的每个元素是一个标准 JSON 对象。
+
+    const data1 = [
+        { name:'London', 'Jan.': 18.9, 'Feb.': 28.8, 'Mar.' :39.3, 'Apr.': 81.4, 'May.': 47, 'Jun.': 20.3, 'Jul.': 24, 'Aug.': 35.6 }
+    ]; // G2 对数据源格式的要求，仅仅是 JSON 数组，数组的每个元素是一个标准 JSON 对象。
+
+    const data2 = [
+        { item: '在线车辆', count: 40 },
+        { item: '离线车辆', count: 21 },
+    ];
+
+    const data3 = [
+        { label: '超速预计', '报警数量': 2800},
+        { label: 'GNSS天线未接或被剪断', '报警数量': 1800},
+        { label: '终端主电源掉电', '报警数量': 950},
+        { label: '超速报警', '报警数量': 500},
+        { label: '甲醇非法加注', '报警数量': 170},
+    ];
+
+    const data4 = [[{name: '北京',value: 0 },
+        {name: '天津',value: 0 },
+        {name: '上海',value: 0 },
+        {name: '重庆',value: 0 },
+        {name: '河北',value: 0 },
+        {name: '河南',value: 0 },
+        {name: '云南',value: 0 },
+        {name: '辽宁',value: 0 },
+        {name: '黑龙江',value: 0 },
+        {name: '湖南',value: 0 },
+        {name: '安徽',value: 0 },
+        {name: '山东',value: 0 },
+        {name: '新疆',value: 0 },
+        {name: '江苏',value: 0 },
+        {name: '浙江',value: 0 },
+        {name: '江西',value: 0 },
+        {name: '湖北',value: 0 },
+        {name: '广西',value: 0 },
+        {name: '甘肃',value: 0 },
+        {name: '山西',value: 0 },
+        {name: '内蒙古',value: 0 },
+        {name: '陕西',value: 0 },
+        {name: '吉林',value: 0 },
+        {name: '福建',value: 0 },
+        {name: '贵州',value: 0 },
+        {name: '广东',value: 0 },
+        {name: '青海',value: 0 },
+        {name: '西藏',value: 0 },
+        {name: '四川',value: 0 },
+        {name: '宁夏',value: 0 },
+        {name: '海南',value: 0 },
+        {name: '台湾',value: 0 },
+        {name: '香港',value: 0 },
+        {name: '澳门',value: 0 },
+        {name: '南海诸岛',value: 0 }]];
+
+
+    var chartsdata = {
+        charts : [
+            {
+                id : 'c1',
+                data : data,
+                height : 300,
+                type : 'xbar',
+                fields : [ 'Jan.','Feb.','Mar.','Apr.','May.','Jun.','Jul.','Aug.' ],
+                key : '月份',
+                value : '月均降雨量',
+                title: '123456',
+                tooltip: '11111111111'
+            },
+            {
+                id : 'c2',
+                data : data,
+                height : 300,
+                type : 'line',
+                fields : [ 'Jan.','Feb.','Mar.','Apr.','May.','Jun.','Jul.','Aug.' ],
+                key : '月份',
+                value : '月均降雨量'
+            },
+            {
+                id : 'c3',
+                data : data2,
+                height : 300,
+                type : 'pie',
+                value : '车辆数量',
+                title : '在线统计',
+                tooltip : '在线、离线车辆的数量和占比'
+            },
+            {
+                id : 'c4',
+                data : data2,
+                height : 300,
+                type : 'pie-donut',
+                value : '数量'
+            },
+            {
+                id : 'c5',
+                data : data2,
+                height : 300,
+                type : 'pie-donut-rose',
+                value : '数量'
+            },
+            {
+                id : 'c7',
+                data : data3,
+                height : 300,
+                type : 'ybar',
+                fields : [ '报警数量'],
+                title: '123456',
+                tooltip: '11111111111'
+            },
+            {
+                id : 'c8',
+                data : data4,
+                width: 600,
+                height : 300,
+                type : 'map-echarts',
+                title: '车辆分布',
+                fields : [ '报警数量']
+            }
+        ]
+    };
+
+    var chartsMap = new Map();
+    chartsMap = compoent_chart.init(chartsdata,'default',function (G2) {
+        //console.log(G2);
+    });
+
+
+    //chartsMap.get('c1').clear();
+    chartsMap.forEach(function (item, key, mapObj) {
+        item.clear();
+        $('#'+key).empty();
+    });
+
+    chartsMap = compoent_chart.init(chartsdata,'dark',function (G2, chartsMap) {
+        //console.log(G2);
+        chartsMap.forEach(function (item, key, mapObj) {
+            //$('#'+key+'-title').empty();
+        })
+    });
+
+    setInterval(function () {
+        chartsMap.get('c1').changeData(compoent_chart.dataTodv(data1,'xbar',[ 'Jan.','Feb.','Mar.','Apr.','May.','Jun.','Jul.','Aug.' ],'月份','月均降雨量'));
+    }, 700);
+
+    //chartsMap.get('c1').repaint();
+
+
+</script>
+
+</html>

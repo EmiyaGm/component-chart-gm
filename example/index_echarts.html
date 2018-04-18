@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../dist/js/component-chart.js"></script>
+<style>
+    #c1, #c2, #c3, #c4, #c5, #c6, #c7, #c8{
+        border: 1px solid #ccc;
+        margin-top: 6px;
+        width: 33%;
+        height: 330px;
+    }
+
+</style>
+<body>
+    <div id="c1"></div>
+    <div id="c2"></div>
+    <div id="c3"></div>
+    <div id="c4"></div>
+    <div id="c5"></div>
+    <div id="c6"></div>
+    <div id="c7"></div>
+    <div id="c8"></div>
+</body>
+<script>
+    const data = [
+            {value:12,name:'在线车辆'},
+            {value:30,name:'离线车辆'}
+            ];
+
+    var myChart = compoent_chart.initEchartsPie("c1",['在线车辆','离线车辆'],data,['车辆数量'],false,'111111','1111111');
+    var myChart2 = compoent_chart.initEchartsPieDonut("c2",['在线车辆','离线车辆'],data,['车辆数量'],false,'111111','1111111');
+    var myChart3 = compoent_chart.initEchartsPieDonutRose("c3",['在线车辆','离线车辆'],data,['车辆数量'],false,'111111','1111111');
+
+</script>
+</html>
