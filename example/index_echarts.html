@@ -34,6 +34,50 @@
     var myChart = compoent_chart.initEchartsPie("c1",['在线车辆','离线车辆'],data,['车辆数量'],false,'111111','1111111');
     var myChart2 = compoent_chart.initEchartsPieDonut("c2",['在线车辆','离线车辆'],data,['车辆数量'],false,'111111','1111111');
     var myChart3 = compoent_chart.initEchartsPieDonutRose("c3",['在线车辆','离线车辆'],data,['车辆数量'],false,'111111','1111111');
+    var myChart4 = compoent_chart.initEchartsBarX("c4",[''],['a','b','c','d'],[[1,2,3,4]],['车辆数量'],'bottom',0,true,false,'111111','111111111');
+    var myChart5 = compoent_chart.initEchartsBarX_nopercent("c5",[''],['a','b','c','d'],[[1,2,3,4]],['车辆数量'],'bottom',0,false,false,'111111','111111111');
+    var myChart6 = compoent_chart.initEchartsBarY("c6",[''],['a','b','c','d'],[[1,2,3,4]],['车辆数量'],'top',false,undefined,'111111','111111111');
+    var myChart7 = compoent_chart.initEchartsBarY_noScroll("c7",[''],['a','b','c','d'],[[1,2,3,4]],['车辆数量'],'top',false,undefined,'111111','111111111');
+
+    const data4 = [[{name: '北京',value: 0 },
+        {name: '天津',value: 0 },
+        {name: '上海',value: 0 },
+        {name: '重庆',value: 0 },
+        {name: '河北',value: 0 },
+        {name: '河南',value: 0 },
+        {name: '云南',value: 0 },
+        {name: '辽宁',value: 0 },
+        {name: '黑龙江',value: 0 },
+        {name: '湖南',value: 0 },
+        {name: '安徽',value: 0 },
+        {name: '山东',value: 0 },
+        {name: '新疆',value: 0 },
+        {name: '江苏',value: 0 },
+        {name: '浙江',value: 0 },
+        {name: '江西',value: 0 },
+        {name: '湖北',value: 0 },
+        {name: '广西',value: 0 },
+        {name: '甘肃',value: 0 },
+        {name: '山西',value: 0 },
+        {name: '内蒙古',value: 0 },
+        {name: '陕西',value: 0 },
+        {name: '吉林',value: 0 },
+        {name: '福建',value: 0 },
+        {name: '贵州',value: 0 },
+        {name: '广东',value: 0 },
+        {name: '青海',value: 0 },
+        {name: '西藏',value: 0 },
+        {name: '四川',value: 0 },
+        {name: '宁夏',value: 0 },
+        {name: '海南',value: 0 },
+        {name: '台湾',value: 0 },
+        {name: '香港',value: 0 },
+        {name: '澳门',value: 0 },
+        {name: '南海诸岛',value: 0 }]];
+    var myChart8 = compoent_chart.initEchartsMap("c8",data4,['报警数量'],0,false,'111111','111111111');
+
+
+
 
 </script>
 </html>
