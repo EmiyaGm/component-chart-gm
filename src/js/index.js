@@ -378,6 +378,7 @@ window.compoent_chart = {
     initEchartsMap(containerId,dataArray,nameArray,minNumber,isNodata,title,tooltip) {
         let seriesInfo =new Array();
         let max = 0;
+        $('#'+containerId).empty();
         if(title){
             if(tooltip){
                 $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'<img src="../dist/images/help.svg" title="'+tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
@@ -541,6 +542,7 @@ window.compoent_chart = {
     },
     initEchartsPie(containerId,legendArray,dataArray,nameArray,isNodata,title,tooltip) {
         let colorArray = ['#2ec7c9','#B0E49D','#f0d702','#63aae1','#bf6ff5','#ae8d70','#333333','#b9c7d4'];
+        $('#'+containerId).empty();
         if(title){
             if(tooltip){
                 $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'<img src="../dist/images/help.svg" title="'+tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
@@ -604,6 +606,7 @@ window.compoent_chart = {
                     saveAsImage: {show: true}
                 }
             },
+            graphic:[],
             calculable: true,
             series: seriesInfo
         };
@@ -629,6 +632,7 @@ window.compoent_chart = {
     initEchartsPieDonut(containerId,legendArray,dataArray,nameArray,isNodata,title,tooltip) {
         let colorArray = ['#2ec7c9','#B0E49D','#f0d702','#63aae1','#bf6ff5','#ae8d70','#333333','#b9c7d4'];
         let seriesInfo =new Array();
+        $('#'+containerId).empty();
         if(title){
             if(tooltip){
                 $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'<img src="../dist/images/help.svg" title="'+tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
@@ -691,6 +695,7 @@ window.compoent_chart = {
                     saveAsImage : {show: true}
                 }
             },
+            graphic:[],
             calculable : true,
             series:seriesInfo
         };
@@ -716,6 +721,7 @@ window.compoent_chart = {
     initEchartsPieDonutRose(containerId,legendArray,dataArray,nameArray,isNodata,title,tooltip) {
         let colorArray = ['#2ec7c9','#B0E49D','#f0d702','#63aae1','#bf6ff5','#ae8d70','#333333','#b9c7d4'];
         let seriesInfo =new Array();
+        $('#'+containerId).empty();
         if(title){
             if(tooltip){
                 $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'<img src="../dist/images/help.svg" title="'+tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
@@ -778,6 +784,7 @@ window.compoent_chart = {
                     saveAsImage : {show: true}
                 }
             },
+            graphic:[],
             calculable : true,
             series:seriesInfo
         };
@@ -803,6 +810,7 @@ window.compoent_chart = {
     initEchartsPie5(containerId,legendArray,dataArray,nameArray,isNodata,title,tooltip) {
         let colorArray = ['#2ec7c9','#B0E49D','#f0d702','#63aae1','#bf6ff5','#ae8d70','#333333','#b9c7d4'];
         let seriesInfo =new Array();
+        $('#'+containerId).empty();
         if(title){
             if(tooltip){
                 $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'<img src="../dist/images/help.svg" title="'+tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
@@ -873,6 +881,7 @@ window.compoent_chart = {
                     saveAsImage : {show: true}
                 }
             },
+            graphic:[],
             calculable : true,
             series:seriesInfo
         };
@@ -905,6 +914,7 @@ window.compoent_chart = {
             labelShow = false;
         }
         let totalArray = [];
+        $('#'+containerId).empty();
         if(title){
             if(tooltip){
                 $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'<img src="../dist/images/help.svg" title="'+tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
@@ -1027,8 +1037,8 @@ window.compoent_chart = {
             grid: {
                 left: '2%',
                 right: '2%',
-                bottom:'10%',
-                top:51,
+                bottom:0,
+                top:30,
                 containLabel: true
             },
             toolbox: {
@@ -1040,6 +1050,7 @@ window.compoent_chart = {
                     saveAsImage : {show: true}
                 }
             },
+            graphic:[],
             calculable : true,
             series:seriesInfo
         };
@@ -1074,6 +1085,7 @@ window.compoent_chart = {
         }else {
             labelShow = false;
         }
+        $('#'+containerId).empty();
         if(title){
             if(tooltip){
                 $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'<img src="../dist/images/help.svg" title="'+tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
@@ -1192,6 +1204,7 @@ window.compoent_chart = {
                     saveAsImage : {show: true}
                 }
             },
+            graphic:[],
             calculable : true,
             series:seriesInfo
         };
@@ -1225,6 +1238,7 @@ window.compoent_chart = {
         let colorArray = ['#2ec7c9','#B0E49D','#f0d702','#63aae1','#bf6ff5','#ae8d70','#333333','#b9c7d4'];
         let seriesInfo =new Array();
         let totalArray = [];
+        $('#'+containerId).empty();
         if(title){
             if(tooltip){
                 $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'<img src="../dist/images/help.svg" title="'+tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
@@ -1380,6 +1394,7 @@ window.compoent_chart = {
                     saveAsImage : {show: true}
                 }
             },
+            graphic:[],
             calculable : true,
             series:seriesInfo
         };
@@ -1412,6 +1427,7 @@ window.compoent_chart = {
         let colorArray = ['#55C7C8','#AAE699','#F4CE65','#718DF5','#65B2EE','#718DF5','#FF9696'];
         let seriesInfo =new Array();
         let totalArray = [];
+        $('#'+containerId).empty();
         if(title){
             if(tooltip){
                 $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'<img src="../dist/images/help.svg" title="'+tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
@@ -1552,6 +1568,7 @@ window.compoent_chart = {
                     saveAsImage : {show: true}
                 }
             },
+            graphic:[],
             calculable : true,
             series:seriesInfo
         };
