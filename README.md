@@ -5,7 +5,7 @@
 - 使用 bower 管理前端库
 - 使用 webpack 打包
 
-#Demo
+## Demo
 
 [G2+echarts map](https://emiyagm.github.io/component-chart-gm/example/index.html)
 

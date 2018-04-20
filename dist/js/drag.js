@@ -71,16 +71,20 @@
             var self = this;
             this.elem.addEventListener('mousedown', start, false);
             function start(event) {
-                self.startX = event.pageX;
-                self.startY = event.pageY;
+                if(event.path[0].className.indexOf('ui-resizable-handle') > -1){
 
-                var pos = self.getPosition();
+                }else{
+                    self.startX = event.pageX;
+                    self.startY = event.pageY;
 
-                self.sourceX = pos.x;
-                self.sourceY = pos.y;
+                    var pos = self.getPosition();
 
-                document.addEventListener('mousemove', move, false);
-                document.addEventListener('mouseup', end, false);
+                    self.sourceX = pos.x;
+                    self.sourceY = pos.y;
+
+                    document.addEventListener('mousemove', move, false);
+                    document.addEventListener('mouseup', end, false);
+                }
             }
 
             function move(event) {
