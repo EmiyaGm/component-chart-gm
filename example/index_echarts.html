@@ -6,24 +6,65 @@
 </head>
 <script src="../bower_components/jquery/dist/jquery.min.js"></script>
 <script src="../dist/js/component-chart.js"></script>
+<script src="../dist/js/drag.js"></script>
 <style>
     #c1, #c2, #c3, #c4, #c5, #c6, #c7, #c8{
         border: 1px solid #ccc;
         margin-top: 6px;
-        width: 33%;
+        width: 600px;
         height: 330px;
+        cursor: move;
+        position: absolute;
+        touch-action: none;
+        transition-property: transform;
+        transition: all .2s ease;
+    }
+
+    #c1{
+        transform: translate(0px, 0px);
+    }
+
+    #c2{
+        transform: translate(0px, 340px);
+    }
+
+    #c3{
+        transform: translate(610px, 340px);
+    }
+
+    #c4{
+        transform: translate(610px, 0px);
+    }
+
+    #c5{
+        transform: translate(1220px, 0px);
+    }
+
+    #c6{
+        transform: translate(1220px, 340px);
+    }
+
+    #c7{
+        transform: translate(0px, 680px);
+    }
+
+    #c8{
+        transform: translate(610px, 680px);
     }
 
 </style>
 <body>
-    <div id="c1"></div>
-    <div id="c2"></div>
-    <div id="c3"></div>
-    <div id="c4"></div>
-    <div id="c5"></div>
-    <div id="c6"></div>
-    <div id="c7"></div>
-    <div id="c8"></div>
+    <div style="height: 3000px">
+        <div id="c1"></div>
+        <div id="c2"></div>
+        <div id="c3"></div>
+        <div id="c4"></div>
+        <div id="c5"></div>
+        <div id="c6"></div>
+        <div id="c7"></div>
+        <div id="c8"></div>
+    </div>
+
 </body>
 <script>
     const data = [
@@ -76,8 +117,9 @@
         {name: '南海诸岛',value: 0 }]];
     var myChart8 = compoent_chart.initEchartsMap("c8",data4,['报警数量'],0,false,'111111','111111111');
 
+    var div1 = document.getElementById("c1");
 
-
+    new Drag('c1');
 
 </script>
 </html>
