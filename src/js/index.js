@@ -367,6 +367,56 @@ window.compoent_chart = {
                         });
                     }
                     break;
+                case 'scatter':
+                    chart.source(charts[i].data);
+                    chart.tooltip({
+                        showTitle: false,
+                        crosshairs: {
+                            type: 'cross'
+                        },
+                        itemTpl: '<li data-index={index} style="margin-bottom:4px;">'
+                        + '<span style="background-color:{color};" class="g2-tooltip-marker"></span>'
+                        + '{name}<br/>'
+                        + '{value}'
+                        + '</li>'
+                    });
+                    chart.point().position(charts[i].key+'*'+charts[i].value)
+                        .color('gender')
+                        .size(4)
+                        .opacity(0.65)
+                        .shape('circle')
+                        .tooltip('gender*'+charts[i].key+'*'+charts[i].value, (gender, first, second) => {
+                            return {
+                                name: gender,
+                                value: first + '  ,  ' + second
+                            };
+                        });
+                    chart.render();
+                    break;
+                case 'table':
+                    let color;
+                    if(theme == 'default'){
+                        color = '#000000';
+                    }else{
+                        color = '#ffffff';
+                    }
+                    let table_columns = charts[i].fields;
+                    var template = '<table border="1" style="width: 100%;height: 100%;color: '+color+';border-color:'+color+'"><tr>';
+                    for (let i = 0; i < table_columns.length; i++) {
+                        template = template + '<th>' + table_columns[i] + '</th>';
+                    }
+                    template = template + '</tr>';
+                    for (let j = 0; j < charts[i].data.length; j++) {
+                        template = template + '<tr>';
+                        for (let k = 0; k < table_columns.length; k++) {
+                            template = template + '<td>' + charts[i].data[j][table_columns[k]] + '</td>';
+                        }
+                        template = template + '</tr>';
+                    }
+                    template = template + '</table>';
+                    $("#"+charts[i].id+'-chart').empty();
+                    $("#"+charts[i].id+'-chart').append(template);
+                    break;
             }
             chartsMap.set(charts[i].id,chart);
         }
@@ -1589,6 +1639,162 @@ window.compoent_chart = {
         }
 
         let myChart = echarts.init(document.getElementById(containerId+'-chart'));// 图表初始化的地方，在页面中要有一个地方来显示图表，他的ID是main
+        // option = getOptionByArray(json, reportDesign);//得到option图形
+        myChart.setOption(option); //显示图形
+        window.onresize = myChart.resize;
+        return myChart;
+    },
+    initEchartsLineForNumber(containerId,legendArray,xArray,dataArray,nameArray,isNodata,title,tooltip){
+        let colorArray = ['#55C7C8','#AAE699','#F4CE65','#718DF5','#65B2EE','#718DF5','#FF9696'];
+        let seriesInfo =new Array();
+        var total = 0;
+        for(var i =0;i<dataArray[0].length;i++){
+            total = total + dataArray[0][i];
+        }
+        if(title){
+            if(tooltip){
+                $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'<img src="../dist/images/help.svg" title="'+tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
+                tippy('img' ,{
+                    arrow: true,
+
+                });
+            }else{
+                $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'</div>');
+            }
+        }
+
+        $('#'+containerId).append('<div id="'+containerId+'-chart" class="chart-canvas" style="height: calc(100% - 30px)"></div>');
+
+        $("#"+containerId+"-chart").append('<div id="'+containerId+'-number-text" style="height: 50%;position: relative;display:  table;width:  100%;line-height:  30px;text-align:  center;"></div><div id="'+containerId+'-number" style="height: 50%;position: relative"></div>');
+
+        $('#'+containerId+'-number-text').append('<span style="display:table-cell;vertical-align: middle;font-size:38px">'+total+'</span>');
+        if(nameArray !=undefined && nameArray.length>0){
+            $.each(nameArray, function(i,o) {
+                let seriesItem={
+                    name:nameArray[i],
+                    type:'line',
+                    smooth : true,
+                    areaStyle: {
+                        normal: {
+                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                offset: 0,
+                                color: colorArray[0]
+                            }, {
+                                offset: 1,
+                                color: '#ffe'
+                            }])
+                        }
+                    },
+                    data:dataArray[i],
+                    lineStyle:{
+                        normal:{
+                            color:colorArray[i]
+                        }
+                    },
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'top'
+                        }
+                    },
+                    itemStyle:{
+                        normal:{
+                            label : {show: false}
+                        },
+                        emphasis:{
+                            color: colorArray[i],
+                            opacity: 0.3
+                        }
+                    },
+                    symbol:'circle',
+                    symbolSize:'15',
+                    showSymbol:false
+                };
+                seriesInfo.push(seriesItem);
+            });
+        }
+
+        let option={
+            tooltip:{trigger: 'axis'},
+            legend: {
+                data:legendArray,
+                icon:'square',
+                left:'1%',
+                bottom:'1%',
+                textStyle:{
+                    fontFamily: '黑体',
+                    fontWeight: 'bold',
+                    fontSize:14
+                }
+            },
+            color:colorArray,
+            xAxis:[{
+                show:false,
+                type : 'category',
+                data : xArray,
+                boundaryGap : false,
+                boundaryGap: ['10%', '10%'],
+                axisTick : {
+                    show : false
+                },
+                axisLine:{
+                    lineStyle:{
+                        color:'#DAE2E5'
+                    }
+                },
+                axisLabel:{
+                    textStyle:{
+                        color:'#999999'
+                    }
+                }
+            }],
+            yAxis : [{
+                type : 'value',
+                show : false,
+                axisLine:{
+                    show:false,
+                    lineStyle:{
+                        color:'#DAE2E5'
+                    }
+                },
+                axisTick : {
+                    show : false
+                },
+                splitLine:{
+                    lineStyle:{
+                        type:'dashed'
+                    }
+                },
+                axisLabel:{
+                    textStyle:{
+                        color:'#999999'
+                    }
+                }
+            }],
+            grid: {
+                left: '2%',
+                right: '2%',
+                bottom:'10%',
+                top:'30%',
+                containLabel: true
+            },
+            toolbox: {
+                show : false,
+                feature : {
+                    mark : {show: true},
+                    dataView : {show: true, readOnly: false},
+                    restore : {show: true},
+                    saveAsImage : {show: true}
+                }
+            },
+            backgroundColor:'#ffffff',
+            graphic: [
+
+            ],
+
+            series:seriesInfo
+        };
+        let myChart = echarts.init(document.getElementById(containerId+'-number'));// 图表初始化的地方，在页面中要有一个地方来显示图表，他的ID是main
         // option = getOptionByArray(json, reportDesign);//得到option图形
         myChart.setOption(option); //显示图形
         window.onresize = myChart.resize;

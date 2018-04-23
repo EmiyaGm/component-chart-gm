@@ -10,7 +10,7 @@
 <script src="../dist/js/component-chart.js"></script>
 <script src="../dist/js/drag.js"></script>
 <style>
-    #c1, #c2, #c3, #c4, #c5, #c6, #c7, #c8{
+    #c1, #c2, #c3, #c4, #c5, #c6, #c7, #c8, #c9{
         border: 1px solid #ccc;
         margin-top: 6px;
         width: 600px;
@@ -54,6 +54,10 @@
         transform: translate(610px, 680px);
     }
 
+    #c9{
+        transform: translate(1220px, 680px);
+    }
+
 </style>
 <body>
     <div style="height: 3000px">
@@ -65,6 +69,7 @@
         <div id="c6"></div>
         <div id="c7"></div>
         <div id="c8"></div>
+        <div id="c9"></div>
     </div>
 
 </body>
@@ -118,6 +123,8 @@
         {name: '澳门',value: 0 },
         {name: '南海诸岛',value: 0 }]];
     var myChart8 = compoent_chart.initEchartsMap("c8",data4,['报警数量'],0,false,'111111','111111111');
+
+    var myChart9 = compoent_chart.initEchartsLineForNumber("c9",[''],['a','b','c','d'],[[1,2,3,4]],['车辆数量']);
 
     var div1 = document.getElementById("c1");
 
