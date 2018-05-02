@@ -4,6 +4,7 @@ import $ from "jquery"
 import tippy from "tippy.js"
 import echarts from "echarts"
 import "echarts/map/js/china.js"
+import {downloadExl} from "./downloadExl";
 
 window.compoent_chart = {
     init(data,theme,callBack){
@@ -1026,6 +1027,35 @@ window.compoent_chart = {
                     color:'#333333'
                 }
             },
+            toolbox: {
+                feature: {
+                    dataView: {show: true, readOnly: false},
+                    magicType: {show: true, type: ['line', 'bar']},
+                    restore: {show: true},
+                    saveAsImage: {show: true},
+                    myTool1: {
+                        show: true,
+                        title: '导出',
+                        icon: 'image://../dist/images/upload.svg',
+                        onclick: function (params){
+                            var jsono = [];
+                            for(var i =0;i<xArray.length;i++){
+                                var col = {
+                                    'No.' : i+1
+                                };
+                                col.Date = xArray[i];
+                                for(var j =0;j<nameArray.length;j++){
+                                    col[nameArray[j]] = dataArray[j][i];
+                                }
+                                jsono.push(col);
+                            }
+                            $('#'+containerId).after('<a href="" download="'+title+'_'+xArray[0]+'-'+xArray[xArray.length-1]+'.xlsx" id="hf"></a>');
+                            new downloadExl().init(jsono);
+                            $('#'+containerId).next().remove();
+                        }
+                    }
+                }
+            },
             tooltip:{
                 trigger: 'axis',
                 axisPointer : {            // 坐标轴指示器，坐标轴触发有效
@@ -1087,18 +1117,8 @@ window.compoent_chart = {
             grid: {
                 left: '2%',
                 right: '2%',
-                bottom:0,
-                top:30,
+                bottom:'10%',
                 containLabel: true
-            },
-            toolbox: {
-                show : false,
-                feature : {
-                    mark : {show: true},
-                    dataView : {show: true, readOnly: false},
-                    restore : {show: true},
-                    saveAsImage : {show: true}
-                }
             },
             graphic:[],
             calculable : true,
@@ -1246,12 +1266,32 @@ window.compoent_chart = {
                 containLabel: true
             },
             toolbox: {
-                show : false,
-                feature : {
-                    mark : {show: true},
-                    dataView : {show: true, readOnly: false},
-                    restore : {show: true},
-                    saveAsImage : {show: true}
+                feature: {
+                    dataView: {show: true, readOnly: false},
+                    magicType: {show: true, type: ['line', 'bar']},
+                    restore: {show: true},
+                    saveAsImage: {show: true},
+                    myTool1: {
+                        show: true,
+                        title: '导出',
+                        icon: 'image://../dist/images/upload.svg',
+                        onclick: function (params){
+                            var jsono = [];
+                            for(var i =0;i<xArray.length;i++){
+                                var col = {
+                                    'No.' : i+1
+                                };
+                                col.Date = xArray[i];
+                                for(var j =0;j<nameArray.length;j++){
+                                    col[nameArray[j]] = dataArray[j][i];
+                                }
+                                jsono.push(col);
+                            }
+                            $('#'+containerId).after('<a href="" download="'+title+'_'+xArray[0]+'-'+xArray[xArray.length-1]+'.xlsx" id="hf"></a>');
+                            new downloadExl().init(jsono);
+                            $('#'+containerId).next().remove();
+                        }
+                    }
                 }
             },
             graphic:[],
@@ -1435,15 +1475,6 @@ window.compoent_chart = {
                 top:20,
                 containLabel: true
             },
-            toolbox: {
-                show : false,
-                feature : {
-                    mark : {show: true},
-                    dataView : {show: true, readOnly: false},
-                    restore : {show: true},
-                    saveAsImage : {show: true}
-                }
-            },
             graphic:[],
             calculable : true,
             series:seriesInfo
@@ -1608,15 +1639,6 @@ window.compoent_chart = {
                 bottom:'10%',
                 top:20,
                 containLabel: true
-            },
-            toolbox: {
-                show : false,
-                feature : {
-                    mark : {show: true},
-                    dataView : {show: true, readOnly: false},
-                    restore : {show: true},
-                    saveAsImage : {show: true}
-                }
             },
             graphic:[],
             calculable : true,
