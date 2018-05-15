@@ -633,6 +633,7 @@ window.compoent_chart = {
             },
             color: colorArray,
             legend: {
+                show:false,
                 orient: 'horizontal',
                 data: legendArray,
                 icon: 'circle',
@@ -722,6 +723,7 @@ window.compoent_chart = {
             },
             color:colorArray,
             legend: {
+                show:false,
                 orient: 'horizontal',
                 data:legendArray,
                 icon:'circle',
@@ -811,6 +813,7 @@ window.compoent_chart = {
             },
             color:colorArray,
             legend: {
+                show:false,
                 orient: 'horizontal',
                 data:legendArray,
                 icon:'circle',
