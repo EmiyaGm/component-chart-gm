@@ -17,7 +17,7 @@ window.compoent_chart = {
             const dv = ds.createView().source(charts[i].data);
 
             if(charts[i].tooltip){
-                $('#'+charts[i].id).append('<div id="'+charts[i].id+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(charts[i].title ? charts[i].title : '')+'<img src="images/help.svg" title="'+charts[i].tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
+                $('#'+charts[i].id).append('<div id="'+charts[i].id+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(charts[i].title ? charts[i].title : '')+'<img src="../dist/images/help.svg" title="'+charts[i].tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
             }else{
                 $('#'+charts[i].id).append('<div id="'+charts[i].id+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(charts[i].title ? charts[i].title : '')+'</div>');
 
