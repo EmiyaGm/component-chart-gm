@@ -17,7 +17,7 @@ window.compoent_chart = {
             const dv = ds.createView().source(charts[i].data);
 
             if(charts[i].tooltip){
-                $('#'+charts[i].id).append('<div id="'+charts[i].id+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(charts[i].title ? charts[i].title : '')+'<img src="../dist/images/help.svg" title="'+charts[i].tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
+                $('#'+charts[i].id).append('<div id="'+charts[i].id+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(charts[i].title ? charts[i].title : '')+'<img src="images/help.svg" title="'+charts[i].tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
             }else{
                 $('#'+charts[i].id).append('<div id="'+charts[i].id+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(charts[i].title ? charts[i].title : '')+'</div>');
 
@@ -74,7 +74,7 @@ window.compoent_chart = {
                         .adjust([{
                             type: 'dodge',
                             marginRatio: 1 / 32
-                    }]);
+                        }]);
                     chart.legend(false);
                     chart.render();
                     break;
@@ -107,7 +107,7 @@ window.compoent_chart = {
                         .adjust([{
                             type: 'dodge',
                             marginRatio: 1 / 32
-                    }]);
+                        }]);
                     chart.legend(false);
                     chart.render();
                     $('#'+charts[i].id+'-chart').after('<div id = "'+charts[i].id+'-slider"></div>');
@@ -432,7 +432,7 @@ window.compoent_chart = {
         $('#'+containerId).empty();
         if(title){
             if(tooltip){
-                $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'<img src="../dist/images/help.svg" title="'+tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
+                $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'<img src="images/help.svg" title="'+tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
                 tippy('img' ,{
                     arrow: true,
 
@@ -596,7 +596,7 @@ window.compoent_chart = {
         $('#'+containerId).empty();
         if(title){
             if(tooltip){
-                $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'<img src="../dist/images/help.svg" title="'+tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
+                $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'<img src="images/help.svg" title="'+tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
                 tippy('img' ,{
                     arrow: true,
 
@@ -687,7 +687,7 @@ window.compoent_chart = {
         $('#'+containerId).empty();
         if(title){
             if(tooltip){
-                $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'<img src="../dist/images/help.svg" title="'+tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
+                $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'<img src="images/help.svg" title="'+tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
                 tippy('img' ,{
                     arrow: true,
 
@@ -777,7 +777,7 @@ window.compoent_chart = {
         $('#'+containerId).empty();
         if(title){
             if(tooltip){
-                $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'<img src="../dist/images/help.svg" title="'+tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
+                $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'<img src="images/help.svg" title="'+tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
                 tippy('img' ,{
                     arrow: true,
 
@@ -867,7 +867,7 @@ window.compoent_chart = {
         $('#'+containerId).empty();
         if(title){
             if(tooltip){
-                $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'<img src="../dist/images/help.svg" title="'+tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
+                $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'<img src="images/help.svg" title="'+tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
                 tippy('img' ,{
                     arrow: true,
 
@@ -971,7 +971,7 @@ window.compoent_chart = {
         $('#'+containerId).empty();
         if(title){
             if(tooltip){
-                $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'<img src="../dist/images/help.svg" title="'+tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
+                $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'<img src="images/help.svg" title="'+tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
                 tippy('img' ,{
                     arrow: true,
 
@@ -1161,7 +1161,7 @@ window.compoent_chart = {
         $('#'+containerId).empty();
         if(title){
             if(tooltip){
-                $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'<img src="../dist/images/help.svg" title="'+tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
+                $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'<img src="images/help.svg" title="'+tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
                 tippy('img' ,{
                     arrow: true,
 
@@ -1334,7 +1334,7 @@ window.compoent_chart = {
         $('#'+containerId).empty();
         if(title){
             if(tooltip){
-                $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'<img src="../dist/images/help.svg" title="'+tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
+                $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'<img src="images/help.svg" title="'+tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
                 tippy('img' ,{
                     arrow: true,
 
@@ -1514,7 +1514,7 @@ window.compoent_chart = {
         $('#'+containerId).empty();
         if(title){
             if(tooltip){
-                $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'<img src="../dist/images/help.svg" title="'+tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
+                $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'<img src="images/help.svg" title="'+tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
                 tippy('img' ,{
                     arrow: true,
 
@@ -1678,7 +1678,7 @@ window.compoent_chart = {
         }
         if(title){
             if(tooltip){
-                $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'<img src="../dist/images/help.svg" title="'+tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
+                $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'<img src="images/help.svg" title="'+tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
                 tippy('img' ,{
                     arrow: true,
 
@@ -1824,6 +1824,781 @@ window.compoent_chart = {
         myChart.setOption(option); //显示图形
         window.onresize = myChart.resize;
         return myChart;
-    }
-}
+    },
+    initEchartsLine_markPoint(containerId,legendArray,xArray,dataArray,nameArray,isNodata,title,tooltip){
+        let colorArray = ['#55C7C8','#AAE699','#F4CE65','#718DF5','#65B2EE','#718DF5','#FF9696'];
+        let seriesInfo =new Array();
+        if(title){
+            if(tooltip){
+                $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'<img src="images/help.svg" title="'+tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
+                tippy('img' ,{
+                    arrow: true,
 
+                });
+            }else{
+                $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'</div>');
+            }
+        }
+        $('#'+containerId).append('<div id="'+containerId+'-chart" class="chart-canvas" style="height: calc(100% - 30px)"></div>');
+
+        if(nameArray !=undefined && nameArray.length>0){
+            $.each(nameArray, function(i,o) {
+                let seriesItem={
+                    name:nameArray[i],
+                    type:'line',
+                    smooth : false,
+                    data:dataArray[i],
+                    markPoint : {
+                        data : [
+                            {type : 'max', name: '最大值'}
+                        ]
+                    },
+                    lineStyle:{
+                        normal:{
+                            color:colorArray[i]
+                        }
+                    },
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'top'
+                        }
+                    },
+                    itemStyle:{
+                        normal:{
+                            label : {show: false}
+                        }
+                    }
+                };
+                seriesInfo.push(seriesItem);
+            });
+        }
+
+        let option={
+            tooltip:{trigger: 'axis'},
+            legend: {
+                data:legendArray,
+                icon:'square',
+                left:'1%',
+                bottom:'1%',
+                textStyle:{
+                    fontFamily: '黑体',
+                    fontWeight: 'bold',
+                    fontSize:14
+                }
+            },
+            toolbox: {
+                feature: {
+                    dataView: {show: true, readOnly: false},
+                    magicType: {show: true, type: ['line', 'bar']},
+                    restore: {show: true},
+                    saveAsImage: {show: true},
+                    myTool1: {
+                        show: true,
+                        title: '导出',
+                        icon: 'image://../dist/images/upload.svg',
+                        onclick: function (params){
+                            var jsono = [];
+                            for(var i =0;i<xArray.length;i++){
+                                var col = {
+                                    'No.' : i+1
+                                };
+                                col.Date = xArray[i];
+                                for(var j =0;j<nameArray.length;j++){
+                                    col[nameArray[j]] = dataArray[j][i];
+                                }
+                                jsono.push(col);
+                            }
+                            $('#'+containerId).after('<a href="" download="'+title+'_'+xArray[0]+'-'+xArray[xArray.length-1]+'.xlsx" id="hf"></a>');
+                            new downloadExl().init(jsono);
+                            $('#'+containerId).next().remove();
+                        }
+                    }
+                }
+            },
+            color:colorArray,
+            xAxis:[{
+                show:true,
+                type : 'category',
+                data : xArray,
+                boundaryGap : false,
+                boundaryGap: ['10%', '10%'],
+                axisTick : {
+                    show : false
+                },
+                axisLine:{
+                    lineStyle:{
+                        color:'#DAE2E5'
+                    }
+                },
+                axisLabel:{
+                    textStyle:{
+                        color:'#999999'
+                    }
+                }
+            }],
+            yAxis : [{
+                type : 'value',
+                show : true,
+                axisLine:{
+                    show:false,
+                    lineStyle:{
+                        color:'#DAE2E5'
+                    }
+                },
+                axisTick : {
+                    show : false
+                },
+                splitLine:{
+                    lineStyle:{
+                        type:'dashed'
+                    }
+                },
+                axisLabel:{
+                    textStyle:{
+                        color:'#999999'
+                    }
+                }
+            }],
+            grid: {
+                left: '2%',
+                right: '2%',
+                bottom:'10%',
+                containLabel: true
+            },
+            backgroundColor:'#ffffff',
+            graphic: [
+
+            ],
+
+            series:seriesInfo
+        };
+        let myChart = echarts.init(document.getElementById(containerId+'-chart'));// 图表初始化的地方，在页面中要有一个地方来显示图表，他的ID是main
+        // option = getOptionByArray(json, reportDesign);//得到option图形
+        myChart.setOption(option); //显示图形
+        window.onresize = myChart.resize;
+        return myChart;
+    },
+    initEchartsLineArea(containerId,legendArray,xArray,dataArray,nameArray,isNodata,title,tooltip){
+        let colorArray = ['#55C7C8','#AAE699','#F4CE65','#718DF5','#65B2EE','#718DF5','#FF9696'];
+        let seriesInfo =new Array();
+        if(title){
+            if(tooltip){
+                $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'<img src="images/help.svg" title="'+tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
+                tippy('img' ,{
+                    arrow: true,
+
+                });
+            }else{
+                $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'</div>');
+            }
+        }
+        $('#'+containerId).append('<div id="'+containerId+'-chart" class="chart-canvas" style="height: calc(100% - 30px)"></div>');
+
+        if(nameArray !=undefined && nameArray.length>0){
+            $.each(nameArray, function(i,o) {
+                let seriesItem={
+                    name:nameArray[i],
+                    type:'line',
+                    smooth : false,
+                    data:dataArray[i],
+                    areaStyle: {
+                        normal: {
+                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                offset: 0,
+                                color: colorArray[0]
+                            }, {
+                                offset: 1,
+                                color: '#ffe'
+                            }])
+                        }
+                    },
+                    lineStyle:{
+                        normal:{
+                            color:colorArray[i]
+                        }
+                    },
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'top'
+                        }
+                    },
+                    itemStyle:{
+                        normal:{
+                            label : {show: false}
+                        }
+                    }
+                };
+                seriesInfo.push(seriesItem);
+            });
+        }
+
+        let option={
+            tooltip:{trigger: 'axis'},
+            legend: {
+                data:legendArray,
+                icon:'square',
+                left:'1%',
+                bottom:'1%',
+                textStyle:{
+                    fontFamily: '黑体',
+                    fontWeight: 'bold',
+                    fontSize:14
+                }
+            },
+            toolbox: {
+                feature: {
+                    dataView: {show: true, readOnly: false},
+                    magicType: {show: true, type: ['line', 'bar']},
+                    restore: {show: true},
+                    saveAsImage: {show: true},
+                    myTool1: {
+                        show: true,
+                        title: '导出',
+                        icon: 'image://../dist/images/upload.svg',
+                        onclick: function (params){
+                            var jsono = [];
+                            for(var i =0;i<xArray.length;i++){
+                                var col = {
+                                    'No.' : i+1
+                                };
+                                col.Date = xArray[i];
+                                for(var j =0;j<nameArray.length;j++){
+                                    col[nameArray[j]] = dataArray[j][i];
+                                }
+                                jsono.push(col);
+                            }
+                            $('#'+containerId).after('<a href="" download="'+title+'_'+xArray[0]+'-'+xArray[xArray.length-1]+'.xlsx" id="hf"></a>');
+                            new downloadExl().init(jsono);
+                            $('#'+containerId).next().remove();
+                        }
+                    }
+                }
+            },
+            color:colorArray,
+            xAxis:[{
+                show:true,
+                type : 'category',
+                data : xArray,
+                boundaryGap : false,
+                boundaryGap: ['10%', '10%'],
+                axisTick : {
+                    show : false
+                },
+                axisLine:{
+                    lineStyle:{
+                        color:'#DAE2E5'
+                    }
+                },
+                axisLabel:{
+                    textStyle:{
+                        color:'#999999'
+                    }
+                }
+            }],
+            yAxis : [{
+                type : 'value',
+                show : true,
+                axisLine:{
+                    show:false,
+                    lineStyle:{
+                        color:'#DAE2E5'
+                    }
+                },
+                axisTick : {
+                    show : false
+                },
+                splitLine:{
+                    lineStyle:{
+                        type:'dashed'
+                    }
+                },
+                axisLabel:{
+                    textStyle:{
+                        color:'#999999'
+                    }
+                }
+            }],
+            grid: {
+                left: '2%',
+                right: '2%',
+                bottom:'10%',
+                containLabel: true
+            },
+            backgroundColor:'#ffffff',
+            graphic: [
+
+            ],
+
+            series:seriesInfo
+        };
+        let myChart = echarts.init(document.getElementById(containerId+'-chart'));// 图表初始化的地方，在页面中要有一个地方来显示图表，他的ID是main
+        // option = getOptionByArray(json, reportDesign);//得到option图形
+        myChart.setOption(option); //显示图形
+        window.onresize = myChart.resize;
+        return myChart;
+    },
+    initEchartsBarX_markPoint(containerId,legendArray,xArray,dataArray,nameArray,xPosition,xInterval,labelShow,isNodata,title,tooltip) {
+        let colorArray = ['#55C7C8','#AAE699','#F4CE65','#718DF5','#65B2EE','#718DF5','#FF9696'];
+        let seriesInfo =new Array();
+        if(labelShow){
+
+        }else {
+            labelShow = false;
+        }
+        let totalArray = [];
+        $('#'+containerId).empty();
+        if(title){
+            if(tooltip){
+                $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'<img src="images/help.svg" title="'+tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
+                tippy('img' ,{
+                    arrow: true,
+
+                });
+            }else{
+                $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'</div>');
+            }
+        }
+        $('#'+containerId).append('<div id="'+containerId+'-chart" class="chart-canvas" style="height: calc(100% - 30px)"></div>');
+        if(nameArray !=undefined && nameArray.length>0){
+            $.each(nameArray, function(i,o) {
+                let total = 0;
+                for(let j=0;j<dataArray[i].length;j++){
+                    total = total + dataArray[i][j];
+                }
+                totalArray.push(total);
+                let seriesItem={
+                    name:nameArray[i],
+                    type:'bar',
+                    data:dataArray[i],
+                    markPoint : {
+                        data : [
+                            {type : 'max', name: '最大值'}
+                        ]
+                    },
+                    label: {
+                        normal: {
+                            show: labelShow,
+                            position: 'top',
+                            textStyle:{
+                                color:'#999999',
+                                fontFamily:'Microsoft YaHei'
+                            }
+                        }
+                    },
+                    itemStyle:{
+                        normal:{
+                            color:colorArray[i]
+                        }
+                    },
+                    barWidth : '50%'
+                };
+                seriesInfo.push(seriesItem);
+            });
+        }
+
+        if(xPosition==undefined){
+            xPosition = 'bottom';
+        }
+
+        let option={
+            legend: {
+                data:legendArray,
+                icon:'square',
+                left:'1%',
+                bottom:'1%',
+                textStyle:{
+                    fontFamily: '黑体',
+                    fontWeight: 'normal',
+                    fontSize:14,
+                    color:'#333333'
+                }
+            },
+            toolbox: {
+                feature: {
+                    dataView: {show: true, readOnly: false},
+                    magicType: {show: true, type: ['line', 'bar']},
+                    restore: {show: true},
+                    saveAsImage: {show: true},
+                    myTool1: {
+                        show: true,
+                        title: '导出',
+                        icon: 'image://../dist/images/upload.svg',
+                        onclick: function (params){
+                            var jsono = [];
+                            for(var i =0;i<xArray.length;i++){
+                                var col = {
+                                    'No.' : i+1
+                                };
+                                col.Date = xArray[i];
+                                for(var j =0;j<nameArray.length;j++){
+                                    col[nameArray[j]] = dataArray[j][i];
+                                }
+                                jsono.push(col);
+                            }
+                            $('#'+containerId).after('<a href="" download="'+title+'_'+xArray[0]+'-'+xArray[xArray.length-1]+'.xlsx" id="hf"></a>');
+                            new downloadExl().init(jsono);
+                            $('#'+containerId).next().remove();
+                        }
+                    }
+                }
+            },
+            tooltip:{
+                trigger: 'axis',
+                axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                    type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                },
+                formatter: function (params) {
+                    let reuslt = '';
+                    for(let i =0;i<params.length;i++){
+                        let percent = params[i].value/totalArray[i]*100;
+                        reuslt = reuslt + params[i].name + '<br />' +params[i].seriesName+':'+params[i].value+'('+percent.toFixed(2)+'%)<br />';
+                    }
+                    return reuslt;
+                }
+            },
+            xAxis:[{
+                show:true,
+                type : 'category',
+                data : xArray,
+                boundaryGap : false,
+                boundaryGap: ['10%', '10%'],
+                axisTick : {
+                    show : false
+                },
+                axisLine:{
+                    lineStyle:{
+                        color:'#DAE2E5'
+                    }
+                },
+                axisLabel:{
+                    textStyle:{
+                        color:'#999999'
+                    }
+                }
+            }],
+            yAxis : [{
+                type : 'value',
+                axisLine:{
+                    show:false,
+                    lineStyle:{
+                        color:'#DAE2E5'
+                    }
+                },
+                axisTick : {
+                    show : false
+                },
+                splitLine:{
+                    lineStyle:{
+                        type:'dashed'
+                    }
+                },
+                axisLabel: {
+                    textStyle:{
+                        color:'#999999'
+                    }
+                },
+                min : 0
+            }],
+            grid: {
+                left: '2%',
+                right: '2%',
+                bottom:'10%',
+                containLabel: true
+            },
+            graphic:[],
+            calculable : true,
+            series:seriesInfo
+        };
+
+        if(isNodata){
+            option.graphic.push({
+                type: 'text',
+                z:100,
+                left:'center',
+                top:'middle',
+                style:{
+                    text:'暂无数据',
+                    font: 'normal 14px 黑体'
+                }
+            });
+            option.xAxis[0].show = false;
+            option.yAxis[0].show = false;
+        }
+
+        let myChart = echarts.init(document.getElementById(containerId+'-chart'));// 图表初始化的地方，在页面中要有一个地方来显示图表，他的ID是main
+        // option = getOptionByArray(json, reportDesign);//得到option图形
+        myChart.setOption(option); //显示图形
+        window.onresize = myChart.resize;
+        return myChart;
+
+    },
+    initEchartsMix(containerId,legendArray,xArray,dataArray,nameArray,isNodata,title,tooltip){
+        let colorArray = ['#55C7C8','#AAE699','#F4CE65','#718DF5','#65B2EE','#718DF5','#FF9696'];
+        let seriesInfo =new Array();
+        if(title){
+            if(tooltip){
+                $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'<img src="images/help.svg" title="'+tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
+                tippy('img' ,{
+                    arrow: true,
+
+                });
+            }else{
+                $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'</div>');
+            }
+        }
+        $('#'+containerId).append('<div id="'+containerId+'-chart" class="chart-canvas" style="height: calc(100% - 30px)"></div>');
+        let option = {
+            legend: {
+                top: 30,
+                data: legendArray
+            },
+            tooltip: {
+                triggerOn: 'none',
+                transitionDuration: 0,
+                confine: true,
+                bordeRadius: 4,
+                borderWidth: 1,
+                borderColor: '#333',
+                backgroundColor: 'rgba(255,255,255,0.9)',
+                textStyle: {
+                    fontSize: 12,
+                    color: '#333'
+                },
+                position: function (pt) {
+                    return [pt[0], 130];
+                }
+            },
+            axisPointer: {
+                link: [{
+                    xAxisIndex: [0, 1]
+                }]
+            },
+            dataZoom: [{
+                type: 'slider',
+                xAxisIndex: [0, 1],
+                realtime: false,
+                handleIcon: 'M10.7,11.9H9.3c-4.9,0.3-8.8,4.4-8.8,9.4c0,5,3.9,9.1,8.8,9.4h1.3c4.9-0.3,8.8-4.4,8.8-9.4C19.5,16.3,15.6,12.2,10.7,11.9z M13.3,24.4H6.7V23h6.6V24.4z M13.3,19.6H6.7v-1.4h6.6V19.6z',
+                handleSize: '120%',
+                start: 0,
+                end: 100,
+                top: 10,
+                height: 20
+            }, {
+                type: 'inside',
+                xAxisIndex: [0, 1],
+                start: 0,
+                end: 100,
+                top: 10,
+                height: 20
+            }],
+            xAxis: [{
+                type: 'category',
+                data: xArray,
+                boundaryGap : false,
+                axisLine: { lineStyle: { color: '#777' } },
+                axisLabel: {
+                    formatter: function (value) {
+                        return echarts.format.formatTime('MM-dd', value);
+                    }
+                },
+                min: 'dataMin',
+                max: 'dataMax',
+                axisPointer: {
+                    show: true
+                }
+            }, {
+                type: 'category',
+                gridIndex: 1,
+                data: xArray,
+                scale: true,
+                boundaryGap : false,
+                splitLine: {show: false},
+                axisLabel: {show: false},
+                axisTick: {show: false},
+                axisLine: { lineStyle: { color: '#777' } },
+                splitNumber: 20,
+                min: 'dataMin',
+                max: 'dataMax',
+                axisPointer: {
+                    type: 'shadow',
+                    label: {show: false},
+                    triggerTooltip: true,
+                    handle: {
+                        show: true,
+                        margin: 30,
+                        color: '#B80C00'
+                    }
+                }
+            }],
+            yAxis: [{
+                scale: true,
+                splitNumber: 2,
+                axisLine: { lineStyle: { color: '#777' } },
+                splitLine: { show: true },
+                axisTick: { show: false },
+                axisLabel: {
+                    inside: true,
+                    formatter: '{value}\n'
+                }
+            }, {
+                scale: true,
+                gridIndex: 1,
+                splitNumber: 2,
+                axisLabel: {show: false},
+                axisLine: {show: false},
+                axisTick: {show: false},
+                splitLine: {show: false}
+            }],
+            grid: [{
+                left: 20,
+                right: 20,
+                top: 60,
+                height: 120,
+                bottom: 50
+            }, {
+                left: 20,
+                right: 20,
+                height: 40,
+                top: 210
+            }],
+            graphic: [{
+                type: 'group',
+                left: 'center',
+                top: 70,
+                width: 300,
+                bounding: 'raw',
+                children: [{
+                    id: nameArray[0],
+                    type: 'text',
+                    style: {fill: colorArray[1], font: 'bold 12px Sans-serif'},
+                    right: 0
+                }]
+            }],
+            series: [{
+                name: nameArray[1],
+                type: 'bar',
+                xAxisIndex: 1,
+                yAxisIndex: 1,
+                itemStyle: {
+                    normal: {
+                        color: '#7fbe9e'
+                    },
+                    emphasis: {
+                        color: '#140'
+                    }
+                },
+                data: dataArray[1]
+            },{
+                name: nameArray[0],
+                type: 'line',
+                data: dataArray[0],
+                smooth: true,
+                showSymbol: false,
+                lineStyle: {
+                    normal: {
+                        width: 1
+                    }
+                }
+            }]
+
+        }
+        let myChart = echarts.init(document.getElementById(containerId+'-chart'));// 图表初始化的地方，在页面中要有一个地方来显示图表，他的ID是main
+        // option = getOptionByArray(json, reportDesign);//得到option图形
+        myChart.setOption(option); //显示图形
+        window.onresize = myChart.resize;
+        return myChart;
+    },
+    initEchartsLineAndBar(containerId,legendArray,xArray,yArray,dataArray,nameArray,isNodata,title,tooltip){
+        let colorArray = ['#55C7C8','#AAE699','#F4CE65','#718DF5','#65B2EE','#718DF5','#FF9696'];
+        let seriesInfo =new Array();
+        if(title){
+            if(tooltip){
+                $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'<img src="images/help.svg" title="'+tooltip+'" style="text-align: center;vertical-align: middle;padding-left: 3px;padding-bottom: 2px;" onerror="this.src=\'common/mauna/js/mauna.charts/dist/images/help.svg\'"></div>');
+                tippy('img' ,{
+                    arrow: true,
+
+                });
+            }else{
+                $('#'+containerId).append('<div id="'+containerId+'-title" class="chart-title" style="padding-left: 5px;padding-top: 10px;font-family: \'Microsoft YaHei\';font-size: 14px;">'+(title ? title : '')+'</div>');
+            }
+        }
+        $('#'+containerId).append('<div id="'+containerId+'-chart" class="chart-canvas" style="height: calc(100% - 30px)"></div>');
+
+        if(nameArray !=undefined && nameArray.length>0){
+            $.each(nameArray, function(i,o) {
+                let seriesItem;
+                if(nameArray[i].type == 'line'){
+                    seriesItem={
+                        name:nameArray[i].name,
+                        type:nameArray[i].type,
+                        data:dataArray[i],
+                    };
+                }else{
+                    seriesItem={
+                        name:nameArray[i].name,
+                        type:nameArray[i].type,
+                        data:dataArray[i],
+                        yAxisIndex: 1,
+                    };
+                }
+                seriesInfo.push(seriesItem);
+            });
+        }
+
+        let option = {
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'cross',
+                    crossStyle: {
+                        color: '#999'
+                    }
+                }
+            },
+            legend: {
+                data:legendArray
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    data: xArray,
+                    axisPointer: {
+                        type: 'shadow'
+                    }
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value',
+                    name: yArray[0],
+                    axisLabel: {
+                        formatter: '{value}'
+                    },
+                    splitLine:{
+                        show:false
+                    }
+                },
+                {
+                    type: 'value',
+                    name: yArray[1],
+                    axisLabel: {
+                        formatter: '{value}'
+                    },
+                    splitLine:{
+                        show:false
+                    }
+                }
+            ],
+            series: seriesInfo,
+            color: colorArray
+        }
+        let myChart = echarts.init(document.getElementById(containerId+'-chart'));// 图表初始化的地方，在页面中要有一个地方来显示图表，他的ID是main
+        // option = getOptionByArray(json, reportDesign);//得到option图形
+        myChart.setOption(option); //显示图形
+        window.onresize = myChart.resize;
+        return myChart;
+    }
+
+}

@@ -7,77 +7,47 @@
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <link href="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.css" rel="stylesheet">
 <script src="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<script src="../dist/js/component-chart.js"></script>
-<script src="../dist/js/drag.js"></script>
+<link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="js/component-chart.js"></script>
+<script src="js/drag.js"></script>
 <style>
-    #c1, #c2, #c3, #c4, #c5, #c6, #c7, #c8, #c9{
+    #c1, #c2, #c3, #c4, #c5, #c6, #c7, #c8, #c9, #c10, #c11, #c12, #c13, #c14{
         border: 1px solid #ccc;
-        margin-top: 6px;
-        width: 600px;
         height: 330px;
         cursor: move;
-        position: absolute;
         touch-action: none;
         transition-property: transform;
         transition: all .2s ease;
     }
-
-    #c1{
-        transform: translate(0px, 0px);
-    }
-
-    #c2{
-        transform: translate(0px, 340px);
-    }
-
-    #c3{
-        transform: translate(610px, 340px);
-    }
-
-    #c4{
-        transform: translate(610px, 0px);
-    }
-
-    #c5{
-        transform: translate(1220px, 0px);
-    }
-
-    #c6{
-        transform: translate(1220px, 340px);
-    }
-
-    #c7{
-        transform: translate(0px, 680px);
-    }
-
-    #c8{
-        transform: translate(610px, 680px);
-    }
-
-    #c9{
-        transform: translate(1220px, 680px);
-    }
-
 </style>
 <body>
-    <div style="height: 3000px">
-        <div id="c1"></div>
-        <div id="c2"></div>
-        <div id="c3"></div>
-        <div id="c4"></div>
-        <div id="c5"></div>
-        <div id="c6"></div>
-        <div id="c7"></div>
-        <div id="c8"></div>
-        <div id="c9"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div id="c1" class="col-md-4"></div>
+        <div id="c2" class="col-md-4"></div>
+        <div id="c3" class="col-md-4"></div>
+        <div id="c4" class="col-md-4"></div>
+        <div id="c5" class="col-md-4"></div>
+        <div id="c6" class="col-md-4"></div>
+        <div id="c7" class="col-md-4"></div>
+        <div id="c8" class="col-md-4"></div>
+        <div id="c9" class="col-md-4"></div>
+        <div id="c10" class="col-md-4"></div>
+        <div id="c11" class="col-md-4"></div>
+        <div id="c12" class="col-md-8"></div>
+        <div id="c13" class="col-md-4"></div>
+        <div id="c14" class="col-md-4"></div>
     </div>
+
+</div>
 
 </body>
 <script>
     const data = [
-            {value:12,name:'在线车辆'},
-            {value:30,name:'离线车辆'}
-            ];
+        {value:12,name:'在线车辆'},
+        {value:30,name:'离线车辆'}
+    ];
 
     var myChart = compoent_chart.initEchartsPie("c1",['在线车辆','离线车辆'],data,['车辆数量'],false,'111111','1111111');
     var myChart2 = compoent_chart.initEchartsPieDonut("c2",['在线车辆','离线车辆'],data,['车辆数量'],false,'111111','1111111');
@@ -126,12 +96,42 @@
 
     var myChart9 = compoent_chart.initEchartsLineForNumber("c9",[''],['a','b','c','d'],[[1,2,3,4]],['车辆数量']);
 
+    var myChart10 = compoent_chart.initEchartsBarX_markPoint("c10",[''],['a','b','c','d'],[[1,2,3,4]],['车辆数量'],'bottom',0,true,false,'111111','111111111')
+
+    var myChart11 = compoent_chart.initEchartsLine_markPoint("c11",[''],['a','b','c','d'],[[1,2,3,4]],['车辆数量'],false,'111111','111111111');
+
+    var myChart12 = compoent_chart.initEchartsMix("c12",['总行驶里程','当日里程'],["2016-03-29", "2016-03-30", "2016-03-31", "2016-04-01"],[[5,6,7,8],[1,2,3,4]],['总里程数','当日里程数'],false,'11111111','11111111');
+
+    var myChart13 = compoent_chart.initEchartsLineArea("c13",[''],['a','b','c','d'],[[1,2,3,4]],['车辆数量'],false,'111111','111111111');
+
+    var myChart14 = compoent_chart.initEchartsLineAndBar("c14",['充电次数','放电次数','充电电量','放电电量'],['1月','2月','3月','4月'],['次数','电量'],[[1,2,3,4],[2,3,4,5],[3,4,5,6],[4,5,6,7]],[{name:'充电次数',type:'bar'},{name:'放电次数',type:'bar'},{name:'充电电量',type:'line'},{name:'放电电量',type:'line'}],false,'111111','1111111111111');
     var div1 = document.getElementById("c1");
 
     new Drag('c1');
 
     $( "#c1" ).resizable({
         stop: function( event, ui ) {
+            console.log(ui);
+            var colSize = ui.element[0].className.split(' ')[0];
+            var num = colSize.replace(/[^0-9]/ig,"");
+            console.log(colSize);
+            console.log(num);
+            var col_1_num = ui.originalSize.width/num;
+            var addNum = 0;
+            console.log(col_1_num);
+            if(ui.originalSize.width < ui.size.width){
+                while (ui.originalSize.width+addNum*col_1_num < ui.size.width){
+                    addNum++;
+                }
+                console.log(addNum);
+                num = parseInt(num) + parseInt(addNum);
+                var classVal = $(ui.element[0]).attr('class');
+                classVal = classVal.replace(colSize,"col-md-"+num);
+                console.log(classVal);
+                $(ui.element[0]).attr("class",classVal );
+            }else{
+
+            }
             myChart.resize();
         }
     });
