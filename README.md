@@ -65,7 +65,7 @@ npm run images
 
 请预先设置好绘制图表的div的宽和高
 
-####G2图表绘制调用
+###G2图表绘制调用
 
 ```javascript
 
@@ -178,9 +178,10 @@ chartsMap.forEach(function (item, key, mapObj) {
     
 //最后一个参数代表回调函数
 
-[G2官方文档](https://antv.alipay.com/zh-cn/g2/3.x/api/index.html)
 ```
-####Echarts4图表绘制调用
+[G2官方文档](https://antv.alipay.com/zh-cn/g2/3.x/api/index.html)
+
+###Echarts4图表绘制调用
 
 ```javascript
 compoent_chart.initEchartsPie(containerId,legendArray,dataArray,nameArray,isNodata,title,tooltip) //饼图
